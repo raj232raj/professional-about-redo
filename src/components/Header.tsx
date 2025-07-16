@@ -1,45 +1,39 @@
 import { Button } from "@/components/ui/button";
-import { Shield, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 w-full z-50 glass-effect">
+    <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
-              <Shield className="w-6 h-6 text-white" />
-            </div>
-            <span className="text-2xl font-bold gradient-text">Hire22</span>
+          <div className="flex items-center">
+            <span className="text-2xl font-bold gradient-text">Hire22.ai</span>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
+            <a href="#why" className="text-foreground hover:text-primary transition-colors font-medium">
+              Why Hire22.ai
+            </a>
             <a href="#about" className="text-foreground hover:text-primary transition-colors font-medium">
-              About
+              About Us
             </a>
-            <a href="#features" className="text-foreground hover:text-primary transition-colors font-medium">
-              Features
+            <a href="#login" className="text-foreground hover:text-primary transition-colors font-medium">
+              Login
             </a>
-            <a href="#team" className="text-foreground hover:text-primary transition-colors font-medium">
-              Team
-            </a>
-            <a href="#contact" className="text-foreground hover:text-primary transition-colors font-medium">
-              Contact
+            <a href="#register" className="text-foreground hover:text-primary transition-colors font-medium">
+              Register
             </a>
           </nav>
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="outline" className="font-medium">
-              Sign In
-            </Button>
-            <Button className="bg-gradient-primary hover:opacity-90 font-medium">
-              Get Started
+            <Button variant="outline" className="font-medium rounded-full px-6">
+              Employer Zone
             </Button>
           </div>
 
@@ -56,24 +50,21 @@ export const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden mt-4 pb-4 border-t border-border">
             <nav className="flex flex-col space-y-4 pt-4">
+              <a href="#why" className="text-foreground hover:text-primary transition-colors font-medium">
+                Why Hire22.ai
+              </a>
               <a href="#about" className="text-foreground hover:text-primary transition-colors font-medium">
-                About
+                About Us
               </a>
-              <a href="#features" className="text-foreground hover:text-primary transition-colors font-medium">
-                Features
+              <a href="#login" className="text-foreground hover:text-primary transition-colors font-medium">
+                Login
               </a>
-              <a href="#team" className="text-foreground hover:text-primary transition-colors font-medium">
-                Team
-              </a>
-              <a href="#contact" className="text-foreground hover:text-primary transition-colors font-medium">
-                Contact
+              <a href="#register" className="text-foreground hover:text-primary transition-colors font-medium">
+                Register
               </a>
               <div className="flex flex-col space-y-2 pt-4">
-                <Button variant="outline" className="font-medium">
-                  Sign In
-                </Button>
-                <Button className="bg-gradient-primary hover:opacity-90 font-medium">
-                  Get Started
+                <Button variant="outline" className="font-medium rounded-full px-6">
+                  Employer Zone
                 </Button>
               </div>
             </nav>

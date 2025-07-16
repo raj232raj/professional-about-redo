@@ -1,118 +1,72 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { LinkedinIcon, Mail, Twitter } from "lucide-react";
+import { Linkedin } from "lucide-react";
 
 export const TeamSection = () => {
   const teamMembers = [
     {
-      name: "Rajesh Kumar",
+      name: "Alex Johnson",
       role: "Founder & CEO",
-      bio: "Former VP at Google India with 15+ years in tech recruitment. Passionate about transforming how executives find opportunities.",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
-      linkedin: "#",
-      twitter: "#",
-      email: "rajesh@hire22.com"
+      bio: "Visionary entrepreneur leading Hire22 to redefine executive job search. Alex blends strategic insight with a passion for privacy-first technology, empowering professionals to connect with top opportunities securely.",
+      image: "https://about-again.vercel.app/assets/pic2.png",
+      linkedin: "https://www.linkedin.com/in/alexjohnson"
     },
     {
-      name: "Priya Sharma",
-      role: "Chief Technology Officer",
-      bio: "AI/ML expert from Microsoft with a PhD in Computer Science. Leading our innovative matching algorithms.",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face",
-      linkedin: "#",
-      twitter: "#",
-      email: "priya@hire22.com"
+      name: "Sarah Chen",
+      role: "Engineering Head",
+      bio: "Sarah drives innovation at Hire22, architecting robust AI solutions and scalable platforms. Her expertise in cloud and full-stack development ensures seamless, secure experiences for all users.",
+      image: "https://about-again.vercel.app/assets/pic2.png",
+      linkedin: "https://www.linkedin.com/in/sarahchen"
     },
     {
-      name: "Arjun Patel",
-      role: "Head of Business Development",
-      bio: "Former McKinsey consultant specializing in talent acquisition. Building partnerships with India's leading companies.",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
-      linkedin: "#",
-      twitter: "#",
-      email: "arjun@hire22.com"
-    },
-    {
-      name: "Sneha Gupta",
-      role: "VP of Operations",
-      bio: "Operations excellence expert from Amazon. Ensuring seamless user experience and platform reliability.",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
-      linkedin: "#",
-      twitter: "#",
-      email: "sneha@hire22.com"
+      name: "Michael Rodriguez",
+      role: "Products & Technology Head",
+      bio: "Michael champions product excellence and technology leadership at Hire22. He specializes in building high-performance teams and delivering innovative solutions for modern recruitment challenges.",
+      image: "https://about-again.vercel.app/assets/pic2.png",
+      linkedin: "https://www.linkedin.com/in/michaelrodriguez"
     }
   ];
 
   return (
-    <section id="team" className="py-20 bg-muted/30">
+    <section id="team" className="py-20 bg-gradient-to-br from-muted/30 to-background">
       <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
-          {/* Section Header */}
-          <div className="text-center mb-16">
-            <Badge variant="secondary" className="mb-4">
-              Our Leadership
-            </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Meet Our{" "}
-              <span className="gradient-text">Exceptional Team</span>
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Passionate professionals with decades of combined experience in technology, recruitment, and executive search, united by a vision to transform career transitions.
-            </p>
-          </div>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold mb-6">
+            Meet Our Team
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Passionate professionals driving innovation in AI-powered recruitment
+          </p>
+        </div>
 
-          {/* Team Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {teamMembers.map((member, index) => (
-              <Card key={index} className="professional-shadow border-0 bg-card hover:shadow-professional-xl transition-all duration-300 group">
-                <CardContent className="p-0">
-                  {/* Profile Image */}
-                  <div className="relative overflow-hidden rounded-t-lg">
-                    <img
-                      src={member.image}
+        <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          {teamMembers.map((member, index) => (
+            <Card key={index} className="group hover:shadow-professional transition-all duration-300 hover-scale">
+              <CardContent className="p-6">
+                <div className="text-center space-y-4">
+                  <div className="relative mx-auto w-24 h-24 rounded-full overflow-hidden mb-4">
+                    <img 
+                      src={member.image} 
                       alt={member.name}
-                      className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div className="absolute bottom-4 left-4 right-4 flex gap-2">
-                        <Button size="sm" variant="secondary" className="w-10 h-10 p-0">
-                          <LinkedinIcon className="w-4 h-4" />
-                        </Button>
-                        <Button size="sm" variant="secondary" className="w-10 h-10 p-0">
-                          <Twitter className="w-4 h-4" />
-                        </Button>
-                        <Button size="sm" variant="secondary" className="w-10 h-10 p-0">
-                          <Mail className="w-4 h-4" />
-                        </Button>
-                      </div>
-                    </div>
                   </div>
-
-                  {/* Profile Content */}
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold mb-1">{member.name}</h3>
-                    <p className="text-primary font-semibold mb-3">{member.role}</p>
+                  <div>
+                    <h4 className="text-lg font-semibold text-muted-foreground mb-1">{member.role}</h4>
+                    <h3 className="text-xl font-bold text-foreground mb-3">{member.name}</h3>
                     <p className="text-muted-foreground text-sm leading-relaxed">{member.bio}</p>
                   </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          {/* Call to Action */}
-          <div className="text-center mt-16">
-            <Card className="professional-shadow border-0 bg-gradient-to-r from-primary/5 to-primary-light/5 max-w-2xl mx-auto">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold mb-4">Want to Join Our Mission?</h3>
-                <p className="text-muted-foreground mb-6 leading-relaxed">
-                  We're always looking for exceptional talent to join our team. If you're passionate about transforming the future of executive recruitment, we'd love to hear from you.
-                </p>
-                <Button className="bg-gradient-primary hover:opacity-90 font-semibold">
-                  View Open Positions
-                </Button>
+                  <div className="flex justify-center pt-4">
+                    <Button variant="outline" size="sm" asChild>
+                      <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
+                        <Linkedin className="w-4 h-4" />
+                      </a>
+                    </Button>
+                  </div>
+                </div>
               </CardContent>
             </Card>
-          </div>
+          ))}
         </div>
       </div>
     </section>
